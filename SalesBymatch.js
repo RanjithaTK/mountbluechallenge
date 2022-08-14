@@ -3,18 +3,20 @@
 // Example
 
 // There is one pair of color  and one of color . There are three odd socks left, one of each color. The number of pairs is .2
+// There is one pair of color  and one of color . There are three odd socks left, one of each color. The number of pairs is .2
 let arr = [1, 2, 1, 2, 1, 3, 2]
 function sockMerchant(n, arr) {
   let pairs = 0
-  let odds = 0
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length; j++) {
-      if (arr[i] === arr[j]) {
+  let a = arr.sort()
+  for (let i = 0; i < n; a++) {
+    for (let j = 0; j < 7; j++) {
+      if (a[i] === a[j]) {
         pairs++
+        i++
         j++
-        continue
-      } 
+      }
     }
   }
+  return pairs
 }
 console.log(sockMerchant(7, arr))
